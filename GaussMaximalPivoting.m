@@ -20,6 +20,7 @@ function[A,b] = GaussMaximalPivoting(A,b)
     if A(maxRow,maxCol) == 0
       m = 1
     else
+      
       #Swap columns
       if k != maxCol
         v(k) = maxCol
@@ -30,11 +31,13 @@ function[A,b] = GaussMaximalPivoting(A,b)
         A(1:n, k) = tmp
       endif  
       
+      #Swap rows
       if k != maxRow
         tmp = A(maxRow, 1:n)
         A(maxRow, 1:n) = A(k, 1:n)
         A(k, 1:n) tmp
       endif
+      
       
     endif
        
